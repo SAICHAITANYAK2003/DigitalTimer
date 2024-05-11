@@ -1,0 +1,32 @@
+/* Write your CSS here */
+.main-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-image: linear-gradient(to Right, white, #cffcf1);
+}
+.elapsed-time-container {
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://assets.ccbp.in/frontend/react-js/digital-timer-elapsed-bg.png');
+}
+.time-controller-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 40px;
+  background-color: transparent;
+  border-width: 0px;
+  cursor: pointer;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
