@@ -11,7 +11,7 @@ const initialState = {
 class DigitalTimer extends Component {
   state = initialState
 
-  componentDidMount() {
+  componentWillMount() {
     this.clearTimerInterval()
   }
 
@@ -35,7 +35,6 @@ class DigitalTimer extends Component {
   renderTimeLimitController = () => {
     const {timeLimitinMinutes, timeElapsedinseconds} = this.state
     const isButtonDisabled = timeElapsedinseconds > 0
-
     return (
       <div className="renderTimeLimitController-container">
         <p className="setTimer-title">Set Timer limit</p>
@@ -70,7 +69,6 @@ class DigitalTimer extends Component {
   incrementTimeElapsed = () => {
     const {timeElapsedinseconds, timeLimitinMinutes} = this.state
     const isTimerCompleted = timeElapsedinseconds === timeLimitinMinutes * 60
-
     if (isTimerCompleted) {
       this.clearTimerInterval()
       this.setState({isTimerRunning: false})
@@ -82,28 +80,29 @@ class DigitalTimer extends Component {
   }
 
   onStartorPauseTimers = () => {
-    const {isTimerRunning, timeElapsedinseconds, timeLimitinMinutes} =
-      this.state
-    const isTimerCompleted = timeElapsedinseconds === timeLimitinMinutes * 60
+    const {
+      isTimerRunning,
+      timeElapsedinseconds,
+      timeLimitinMinutes,
+    } = this.state
 
+    const isTimerCompleted = timeElapsedinseconds === timeLimitinMinutes * 60
     if (isTimerCompleted) {
       this.setState({timeElapsedinseconds: 0})
     }
-
     if (isTimerRunning) {
       this.clearTimerInterval()
     } else {
       this.intervalid = setInterval(this.incrementTimeElapsed, 1000)
     }
-
     this.setState(prevState => ({isTimerRunning: !prevState.isTimerRunning}))
   }
 
   renderTimerController = () => {
     const {isTimerRunning} = this.state
     const isRunningorstop = isTimerRunning
-      ? 'https://assets.ccbp.in/frontend/react-js/pause-icon-img.png'
-      : 'https://assets.ccbp.in/frontend/react-js/play-icon-img.png'
+      ? 'https://assets.ccbp.in/frontend/react-js/pause-icon-img.png '
+      : 'https://assets.ccbp.in/frontend/react-js/play-icon-img.png '
     const isRunningorstopAlttext = isTimerRunning ? 'pause icon' : 'play icon'
 
     return (
@@ -132,7 +131,7 @@ class DigitalTimer extends Component {
               onClick={this.onResetTimer}
             >
               <img
-                src="https://assets.ccbp.in/frontend/react-js/reset-icon-img.png"
+                src="https://assets.ccbp.in/frontend/react-js/reset-icon-img.png "
                 className="pause-stop-icon"
                 alt="reset icon"
               />
@@ -159,7 +158,6 @@ class DigitalTimer extends Component {
   render() {
     const {isTimerRunning} = this.state
     const label = isTimerRunning ? 'Running' : 'Paused'
-
     return (
       <div className="main-container">
         <div className="digital-timer-container">
