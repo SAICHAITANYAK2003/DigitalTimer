@@ -23,7 +23,7 @@
   ],
   "rules": {
     "prettier/prettier": "error",
-    "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx"]}],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/state-in-constructor": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-uses-react": "off",
@@ -31,28 +31,23 @@
     "react/prop-types": "off",
     "jsx-a11y/label-has-associated-control": [
       2,
-      {
-        "labelAttributes": ["htmlFor"]
-      }
+      { "labelAttributes": ["htmlFor"] }
     ],
     "jsx-a11y/click-events-have-key-events": 0,
     "jsx-a11y/no-noninteractive-element-interactions": [
       "off",
-      {
-        "handlers": ["onClick"]
-      }
+      { "handlers": ["onClick"] }
     ],
     "react/prefer-stateless-function": [
       0,
-      {
-        "ignorePureComponents": true
-      }
+      { "ignorePureComponents": true }
     ],
     "no-unused-vars": "warn",
     "jsx-a11y/alt-text": 1,
     "react/no-unused-state": "warn",
     "react/button-has-type": "warn",
     "react/no-unescaped-entities": "warn",
+    "react/no-deprecated": "warn",
     "react/jsx-props-no-spreading": "off",
     "operator-assignment": ["warn", "always"],
     "radix": "off"
